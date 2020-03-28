@@ -1,0 +1,31 @@
+#:kivy 1.11.1
+
+<Principal>:
+	orientation: 'vertical'
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		Button:
+			text: 'Up'
+			on_press: root.count_up()
+
+		Button:
+			text: 'Down'
+			on_press: root.count_down()
+
+		Label:
+			id: label_1
+			text: '0 %'
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		FloatLayout:
+
+			BoxLayout:
+				id: bar_value
+				canvas.after:
+					Rectangle:
+						pos: self.pos
+						size: self.size
